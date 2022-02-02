@@ -22,10 +22,38 @@ fetch(chrome.runtime.getURL('/src/inject/inject.html')).then(r => r.text()).then
   .then(() => {
 
 	// Init
+	let userIds = []
+	let currentState = 0
+	//const validationIds = []	// List of predefined IDs for Stories each user has to annotate in order to verify interrater reliability
+	let currentStories = null
+	let currentOwner = null
+
+	// Getting userIds
+	fetch('https://www.instagram.com/graphql/query/?query_hash=d15efd8c0c5b23f0ef71f18bf363c704&only_stories=True')
+		.then(r => r.json())
+		.then(result => {
+			console.log(result)
+			const edges = result["data"]["user"]["feed_reels_tray"]["edge_reels_tray_to_reel"]["edges"];
+			edges.forEach(element => userIds.push(element["node"]["id"]))
+		})
+		.then(() => {
+			fetch("https://www.instagram.com/graphql/query/?query_hash=303a4ae99711322310f25250d988f3b7&reel_ids=" + userIds[currentState] + "&precomposed_overlay=False")
+			.then(r => r.json())
+			.then(result => {
+				currentOwner = result['data']['reels_media'][0]['owner']
+				currentStories = result['data']['reels_media'][0]['items']
+
+				//$('#currentImage').attr('src')(currentStories[0]['display_url'])
+				$('#log').html(JSON.stringify(currentStories))
+			})
+		})
 
 	// TODO: Request stories, save them to list
 	// TODO: Add Interface for Coding / Annotating the Stories
 	// TODO: Push them to server.
+
+	// Requests
+
 
 	// UI Functions
 
@@ -56,3 +84,4 @@ fetch(chrome.runtime.getURL('/src/inject/inject.html')).then(r => r.text()).then
    })
 
 }) */
+

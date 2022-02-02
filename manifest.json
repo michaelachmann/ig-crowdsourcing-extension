@@ -50,6 +50,7 @@
       "js": [
         "js/bootstrap.min.js",
         "js/jquery-3.6.0.min.js",
+        "js/reef.min.js",
         "js/appwrite.min.js",
         "src/inject/inject.js"
       ]

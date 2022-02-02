@@ -1,5 +1,5 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
+  "name": "Instagram Story Annotator",
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "This extension was created with the awesome extensionizr.com",
@@ -14,8 +14,11 @@
     "scripts": [
       "src/bg/background.js"
     ],
-    "persistent": false
+    "persistent": true
   },
+  "web_accessible_resources": [
+    "src/inject/inject.html"
+  ],
   "options_page": "src/options/index.html",
   "page_action": {
     "default_icon": "icons/icon19.png",
@@ -23,22 +26,31 @@
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
-    "https://www.instagram.com/stories/*"
+    "https://*.instagram.com/*",
+    "https://instagram.com/*",
+    "https://cdn.jsdelivr.net/npm/*",
+    "webRequest",
+    "tabs",
+    "debugger"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://www.instagram.com/*"
       ],
       "css": [
+        "css/bootstrap.min.css",
         "src/inject/inject.css"
       ]
     },
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://www.instagram.com/*"
       ],
       "js": [
+        "js/bootstrap.min.js",
+        "js/jquery-3.6.0.min.js",
+        "js/appwrite.min.js",
         "src/inject/inject.js"
       ]
     }

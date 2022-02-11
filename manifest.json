@@ -12,20 +12,19 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "src/bg/background.js"
+      "bg/background.js"
     ],
     "persistent": true
   },
   "web_accessible_resources": [
-    "src/inject/inject.html",
-    "src/app/index.html",
-    "src/app/script.js"
+    "inject/inject.html",
+    "app/index.html",
+    "app/script.js"
   ],
-  "options_page": "src/options/index.html",
+  "options_page": "options/index.html",
   "permissions": [
     "https://*.instagram.com/*",
     "https://instagram.com/*",
-    "https://cdn.jsdelivr.net/npm/*",
     "webRequest",
     "tabs",
     "debugger"
@@ -36,8 +35,7 @@
         "https://www.instagram.com/*"
       ],
       "css": [
-        "src/inject/output.css",
-        "src/inject/inject.css"
+        "inject/inject.css"
       ]
     },
     {
@@ -45,10 +43,8 @@
         "https://www.instagram.com/*"
       ],
       "js": [
-        "js/jquery-3.6.0.min.js",
-        "js/reef.min.js",
-        "js/appwrite.min.js",
-        "src/inject/inject.js"
+        "inject/jquery-3.6.0.min.js",
+        "inject/inject.js"
       ]
     }
   ]

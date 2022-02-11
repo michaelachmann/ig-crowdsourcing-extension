@@ -17,14 +17,11 @@
     "persistent": true
   },
   "web_accessible_resources": [
-    "src/inject/inject.html"
+    "src/inject/inject.html",
+    "src/app/index.html",
+    "src/app/script.js"
   ],
   "options_page": "src/options/index.html",
-  "page_action": {
-    "default_icon": "icons/icon19.png",
-    "default_title": "page action demo",
-    "default_popup": "src/page_action/page_action.html"
-  },
   "permissions": [
     "https://*.instagram.com/*",
     "https://instagram.com/*",
@@ -39,7 +36,7 @@
         "https://www.instagram.com/*"
       ],
       "css": [
-        "css/bootstrap.min.css",
+        "src/inject/output.css",
         "src/inject/inject.css"
       ]
     },
@@ -48,7 +45,6 @@
         "https://www.instagram.com/*"
       ],
       "js": [
-        "js/bootstrap.min.js",
         "js/jquery-3.6.0.min.js",
         "js/reef.min.js",
         "js/appwrite.min.js",

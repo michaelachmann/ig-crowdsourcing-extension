@@ -5,7 +5,7 @@
  .annotation-box{
     margin: auto;
     width: 75%;
-    height: 75%;
+    height: 90%;
     box-sizing: border-box;
 }
 
@@ -23,4 +23,16 @@
    position: fixed;
    top: 50px;
    left: 25px;
+}
+
+.story-viewport {
+   position: relative;
+   height: 350px;
+   width: auto;
+}
+
+#annotator-app {
+   position: relative;
+   display: block;
+   max-height: 75%;
 }

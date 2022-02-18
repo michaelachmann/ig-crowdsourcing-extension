@@ -2,37 +2,8 @@
  * Place your custom CSS styles here.
  **/
 
- .annotation-box{
-    margin: auto;
-    width: 75%;
-    height: 90%;
-    box-sizing: border-box;
-}
-
- .overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
- }
-
- .start-button {
+.start-button {
    position: fixed;
-   top: 50px;
+   top: 45px;
    left: 25px;
-}
-
-.story-viewport {
-   position: relative;
-   height: 350px;
-   width: auto;
-}
-
-#annotator-app {
-   position: relative;
-   display: block;
-   max-height: 75%;
 }
